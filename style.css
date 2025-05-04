@@ -1,44 +1,153 @@
+/* Base styling */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #fdfcf9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h2, h3 {
+  margin-top: 0;
+  color: #444;
+}
+
+/* Inputs and textarea */
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #fdd835;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #fbc02d;
+}
+
+#logout-btn {
+  float: right;
+  background-color: #ccc;
+  color: #222;
+}
+
+#logout-btn:hover {
+  background-color: #bbb;
+}
+
+/* BINGO banner */
+#bingo-banner {
+  display: none;
+  background-color: #fdd835;
+  color: #222;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Bingo grid */
+#bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#bingo-grid div {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #fff8e1;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+#bingo-grid div:hover {
+  background-color: #fff176;
+}
+
+#bingo-grid div.clicked {
+  background-color: #fdd835 !important;
+  font-weight: bold;
+}
+
+/* Saved board list */
+.board-entry {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.board-entry button {
+  margin-left: 5px;
+}
+
+.board-entry a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.board-entry a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #bingo-grid {
+    padding: 0 10px;
   }
-  
-  .app {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-  }
-  
+
   button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    width: 100%;
+    margin-top: 12px;
   }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
-    margin-top: 20px;
+
+  .board-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
-  
-  .grid div {
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-    min-height: 60px;
-  }
-  
-  .grid div.clicked {
-    background-color: gold;
-  }
-  
+}
