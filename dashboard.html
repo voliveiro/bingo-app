@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Bingo Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+    }
+    #item-count {
+      margin: 10px 0;
+    }
+    #your-boards {
+      margin-top: 30px;
+    }
+    .board-link {
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="welcome"></h2>
+  <button id="logout-btn">Logout</button>
+
+  <h3>Create or Edit Bingo Board</h3>
+  <input type="hidden" id="current-board-id" />
+  <input type="text" id="bingo-title" placeholder="Board title" required /><br /><br />
+  <textarea id="bingo-items" placeholder="Enter at least 25 items, one per line"></textarea>
+  <p id="item-count">0 items entered</p>
+  <button id="generate-btn">Save Board</button>
+
+  <div id="your-boards">
+    <h3>Your Saved Bingo Boards</h3>
+    <div id="board-list"></div>
+  </div>
+  
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

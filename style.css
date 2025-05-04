@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .grid div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    min-height: 60px;
+  }
+  
+  .grid div.clicked {
+    background-color: gold;
+  }
+  
