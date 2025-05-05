@@ -86,7 +86,11 @@ button:hover {
 
 #bingo-grid div {
   border: 1px solid #ddd;
-  padding: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Ensures perfect squares */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #fff8e1;
   text-align: center;
   font-size: 16px;
@@ -94,12 +98,16 @@ button:hover {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s ease;
+  overflow: hidden;
+  padding: 6px;
+  word-break: break-word;
+  font-size: clamp(10px, 2vw, 16px); /* Dynamically shrink font */
 }
+
 
 #bingo-grid div:hover {
   background-color: #fff176;
 }
-
 #bingo-grid div.clicked {
   background-color: #fdd835 !important;
   font-weight: bold;
@@ -107,20 +115,24 @@ button:hover {
 
 /* Saved board list */
 .board-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;  /* ✅ THIS is the real key */
+  padding: 10px;
+  margin-bottom: 8px;
   background: #f9f9f9;
   border: 1px solid #eee;
   border-radius: 6px;
-  padding: 10px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
+
 .board-entry button {
-  margin-left: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
 }
+
+
 
 .board-entry a {
   text-decoration: none;
@@ -150,4 +162,15 @@ button:hover {
     align-items: flex-start;
     gap: 6px;
   }
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#your-boards {
+  margin-top: 20px;
 }

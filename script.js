@@ -95,9 +95,7 @@ function loadBoard() {
         };
         grid.appendChild(cell);
       });
-    } else {
-      alert("Board not found");
-    }
+    }  
   });
 }
 
@@ -188,9 +186,15 @@ function loadUserBoards() {
             }
           };
 
+          const buttonGroup = document.createElement("div");
+          buttonGroup.className = "button-group";
+          buttonGroup.appendChild(editBtn);
+          buttonGroup.appendChild(deleteBtn);
+
           container.appendChild(link);
-          container.appendChild(editBtn);
-          container.appendChild(deleteBtn);
+          container.appendChild(buttonGroup);
+
+
           boardList.appendChild(container);
         }
       });
@@ -221,6 +225,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadUserBoards();
+
+    const logoutBtn = document.getElementById("logout-btn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("bingoUser");
+    window.location.href = "index.html";  // Redirect to login page
+  });
+}
+
   }
 
   if (isBoard) {
