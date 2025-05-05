@@ -186,10 +186,23 @@ function loadUserBoards() {
             }
           };
 
+          const linkBtn = document.createElement("button");
+          linkBtn.textContent = "Get Link";
+          linkBtn.addEventListener("click", () => {
+            const fullUrl = `${window.location.origin}/board.html?id=${id}`;
+            navigator.clipboard.writeText(fullUrl).then(() => {
+              linkBtn.textContent = "✅ Copied!";
+              setTimeout(() => (linkBtn.textContent = "Get Link"), 2000);
+            });
+          });
+
+
           const buttonGroup = document.createElement("div");
           buttonGroup.className = "button-group";
           buttonGroup.appendChild(editBtn);
           buttonGroup.appendChild(deleteBtn);
+          buttonGroup.appendChild(linkBtn);
+
 
           container.appendChild(link);
           container.appendChild(buttonGroup);

@@ -171,6 +171,12 @@ button:hover {
   align-items: center;
 }
 
+.button-group button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+
 #your-boards {
   margin-top: 20px;
 }
